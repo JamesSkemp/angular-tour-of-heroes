@@ -14,6 +14,8 @@ ng generate component hero-detail
 ng generate service hero
 ng generate component messages
 ng generate service message
+# Generate a module in src/app (flat) and register it in AppModule imports (module=app)
+ng generate module app-routing --flat --module=app
 ```
 
 ## Development server
