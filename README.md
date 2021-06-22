@@ -4,6 +4,16 @@ This project follows the official [Angular Tour of Heroes tutorial](https://angu
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
 
+Commands run:
+
+```
+ng new angular-tour-of-heroes
+ng serve --open
+ng generate component heroes
+ng generate component hero-detail
+ng generate service hero
+```
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
