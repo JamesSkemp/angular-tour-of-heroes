@@ -12,6 +12,8 @@ ng serve --open
 ng generate component heroes
 ng generate component hero-detail
 ng generate service hero
+ng generate component messages
+ng generate service message
 ```
 
 ## Development server
