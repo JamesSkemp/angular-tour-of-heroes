@@ -16,6 +16,7 @@ ng generate component messages
 ng generate service message
 # Generate a module in src/app (flat) and register it in AppModule imports (module=app)
 ng generate module app-routing --flat --module=app
+ng generate component dashboard
 ```
 
 ## Development server
