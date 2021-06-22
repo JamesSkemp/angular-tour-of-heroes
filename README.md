@@ -1,5 +1,7 @@
 # AngularTourOfHeroes
 
+This project follows the official [Angular Tour of Heroes tutorial](https://angular.io/tutorial), as of late June 2021.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
 
 ## Development server
