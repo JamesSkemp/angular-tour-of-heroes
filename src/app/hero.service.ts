@@ -14,6 +14,9 @@ import { HEROES } from './mock-heroes';
   providedIn: 'root'
 })
 export class HeroService {
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
 
   // Angular will automatically inject the singleton MessageService.
   constructor(private http: HttpClient, private messageService: MessageService) { }
@@ -32,6 +35,13 @@ export class HeroService {
         tap(_ => this.log('fetched heroes')),
         catchError(this.handleError<Hero[]>('getHeroes', []))
       );
+  }
+
+  updateHero(hero: Hero): Observable<any> {
+    return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
+      tap(_ => this.log(`update hero id=${hero.id}`)),
+      catchError(this.handleError<any>('updateHero'))
+    );
   }
 
   private heroesUrl = 'api/heroes';
