@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { MessageService } from './message.service';
 
@@ -14,7 +15,7 @@ import { HEROES } from './mock-heroes';
 export class HeroService {
 
   // Angular will automatically inject the singleton MessageService.
-  constructor(private messageService: MessageService) { }
+  constructor(private http: HttpClient, private messageService: MessageService) { }
 
   getHero(id: number): Observable<Hero> {
     // For now assume id is always correct
@@ -24,8 +25,12 @@ export class HeroService {
   }
 
   getHeroes(): Observable<Hero[]> {
-    const heroes = of(HEROES);
-    this.messageService.add('HeroService: fetched heroes');
-    return heroes;
+    return this.http.get<Hero[]>(this.heroesUrl);
+  }
+
+  private heroesUrl = 'api/heroes';
+
+  private log(message: string) {
+    this.messageService.add(`HeroServices: ${message}`);
   }
 }
