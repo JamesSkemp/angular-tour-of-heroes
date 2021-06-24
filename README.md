@@ -20,6 +20,7 @@ ng generate component dashboard
 # In-memory Web API
 npm install angular-in-memory-web-api --save
 ng generate service InMemoryData
+ng generate component hero-search
 ```
 
 ## Development server
